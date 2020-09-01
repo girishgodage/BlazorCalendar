@@ -1,0 +1,41 @@
+﻿@page "/"
+
+ <!--Header-->
+<header>
+    <h3 class="ms-fontSize-42 ms-fontWeight-regular">Welcome to Blazor Calendar</h3>
+    <p class="ms-fontSize-14 ms-fontWeight-regular">Blazor Calendar allows you to manage all you events within your
+    Outlook Calendar</p>
+
+    <!--Not Authenticated Users-->
+    <AuthorizeView>
+        <NotAuthorized>
+            <p class="ms-fontSize-14 ms-fontWeight-regular">Please Sign in with your Microsoft Account to get started</p>   
+            <a href="#" class="microsoft-login-button shadow-effect"><img src="assets/images/microsoft.png" alt=""> Sign in
+                with Microsoft</a>
+        </NotAuthorized>    
+    </AuthorizeView>    
+</header>
+
+<!-- Caleder Component -->
+<div class="row">        
+           
+        <!--Calendar-->
+        <div class="col-sm-12 col-md-12 col-lg-9">
+            <Calendar>
+                <DayTemplate Context="day">
+                    @{
+                        string currentDayClass = day.Date == DateTime.Now.Date ? "current-day" : "";
+                        
+                    }
+                    @if(!day.IsEmpty)
+                    {
+                        <div class="day shadow-effect @currentDayClass">
+                            <h3 class="ms-fontSize-24 ms-fontWeight-regular">@day.DayNumber</h3>
+                        </div>     
+                    }
+
+                      
+                </DayTemplate>
+            </Calendar>
+        </div> 
+</div>           

@@ -1,0 +1,29 @@
+<!-- Day Events List -->
+          <div class="ms-depth-16 card">
+            <div class="card-content">
+              <h3 class="ms-fontSize-22 ms-fontWeight-regular">@SelectedDay.Date.ToString("D")</h3>
+              @{
+                if(SelectedDay.Events == null || SelectedDay.Events.Count == 0)
+                {
+                    <h3 class="ms-fontSize-14 ms-fontWeight-regular">No Events in this Day</h3>
+                }else
+                {
+                    @foreach (var item in SelectedDay.Events)
+                    {  
+                    <div class="event shadow-effect magenta">
+                        <h3 class="ms-fontSize-14 ms-fontWeight-regular">6:00 PM to 8:00 PM</h3>
+                        <p class="ms-fontSize-11 ms-fontWeight-regular">Lorem ipsum, dolor sit amet consectetur adipisicing.</p>
+                    </div>
+                    }        
+                }            
+                
+            }
+             
+            </div>
+
+          </div>
+@code{
+    [Parameter]
+    public CalendarDay SelectedDay {get; set;}
+
+}
