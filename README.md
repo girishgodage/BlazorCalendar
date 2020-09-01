@@ -19,6 +19,10 @@ It's teaches you how to render and create a Calendar component from scratch and 
  - Implement communication between Blazor Web App components.
  - Manage the states of the components within the Blazor WebAssembly app. 
 
+## Reference
+- FluentUI - https://developer.microsoft.com/en-us/fluentui#/
+- The ultimate CSS tools for web designers - https://www.cssmatic.com/box-shadow
+- Microsoft Graph API - https://developer.microsoft.com/en-us/graph  (For Synchronizing the Outlook calendar)
 
 ## How to make this app works
 
